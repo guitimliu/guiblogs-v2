@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${site.url}/`, lastModified: new Date(posts[0]?.date ?? Date.now()) },
     ...posts.map((post) => ({
-      url: `${site.url}/posts/${encodeURIComponent(post.slug)}/`,
+      url: `${site.url}/${encodeURIComponent(post.slug)}/`,
       lastModified: new Date(post.updated ?? post.date),
     })),
     ...Array.from({ length: getTotalPages() - 1 }, (_, i) => ({

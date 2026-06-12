@@ -12,7 +12,7 @@ export function PostCard({ post }: { post: Post }) {
       </p>
       <h2 className="mt-2 text-xl font-semibold leading-relaxed">
         <Link
-          href={`/posts/${post.slug}/`}
+          href={`/${post.slug}/`}
           className="transition-colors hover:text-accent"
         >
           {post.title}

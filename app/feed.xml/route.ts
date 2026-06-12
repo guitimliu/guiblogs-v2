@@ -17,7 +17,7 @@ export async function GET() {
   });
 
   for (const post of getPublishedPosts().slice(0, 20)) {
-    const url = `${site.url}/posts/${encodeURIComponent(post.slug)}/`;
+    const url = `${site.url}/${encodeURIComponent(post.slug)}/`;
     feed.addItem({
       title: post.title,
       id: url,

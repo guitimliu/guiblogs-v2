@@ -90,7 +90,7 @@ export default async function PostPage({
 
       <nav className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-sm sm:flex-row sm:justify-between">
         {prev ? (
-          <Link href={`/posts/${prev.slug}/`} className="text-muted hover:text-accent">
+          <Link href={`/${prev.slug}/`} className="text-muted hover:text-accent">
             ← {prev.title}
           </Link>
         ) : (
@@ -98,7 +98,7 @@ export default async function PostPage({
         )}
         {next ? (
           <Link
-            href={`/posts/${next.slug}/`}
+            href={`/${next.slug}/`}
             className="text-muted hover:text-accent sm:text-right"
           >
             {next.title} →

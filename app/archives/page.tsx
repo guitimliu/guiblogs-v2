@@ -24,7 +24,7 @@ export default function ArchivesPage() {
                   {formatMonthDay(post.date)}
                 </time>
                 <Link
-                  href={`/posts/${post.slug}/`}
+                  href={`/${post.slug}/`}
                   className="leading-7 transition-colors hover:text-accent"
                 >
                   {post.title}

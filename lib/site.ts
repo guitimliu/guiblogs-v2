@@ -1,8 +1,8 @@
 export const site = {
-  title: "GuiBlogs",
-  description: "Gui 的個人部落格 — 前端開發、生活與紀錄",
+  title: "Gui Blog",
+  description: "網站的工具人 — 程式筆記與個人成長紀錄",
   url: "https://guiblogs-2026.pages.dev",
   author: "Gui",
   locale: "zh-TW",
-  postsPerPage: 5,
+  postsPerPage: 10,
 } as const;
