@@ -5,6 +5,12 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { site } from "@/lib/site";
 
+// Runs before paint to set data-theme from localStorage or system preference,
+// avoiding a flash of wrong theme on first load.
+const themeBootScript = `
+(function(){try{var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=(s==='light'||s==='dark')?s:(d?'dark':'light');}catch(e){document.documentElement.dataset.theme='light';}})();
+`;
+
 const notoSerif = Noto_Serif_TC({
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
@@ -47,8 +53,16 @@ export default function RootLayout({
     <html
       lang="zh-TW"
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
       className={`${notoSerif.variable} ${lora.variable} ${plexMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          // Must run synchronously before paint to prevent flash of wrong theme;
+          // next/script's beforeInteractive defers via the runtime queue.
+          dangerouslySetInnerHTML={{ __html: themeBootScript }}
+        />
+      </head>
       <body className="flex min-h-full flex-col font-body">
         <Header />
         <main className="mx-auto w-full max-w-2xl flex-1 px-5">{children}</main>
