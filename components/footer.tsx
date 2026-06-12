@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="mt-20 border-t border-line">
       <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-2 px-5 py-9 font-mono text-xs text-muted">
         <p>
-          © {new Date().getFullYear()} {site.author} · 網站的工具人
+          © {new Date().getFullYear()} {site.author} · {site.subtitle}
         </p>
         <a
           href="/feed.xml"
