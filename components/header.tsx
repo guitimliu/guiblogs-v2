@@ -13,7 +13,7 @@ const navItems = [
 export function Header() {
   return (
     <header className="border-b border-line">
-      <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-7">
+      <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-7">
         <Link
           href="/"
           className="font-display text-2xl italic tracking-tight transition-colors hover:text-accent"
