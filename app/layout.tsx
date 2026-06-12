@@ -42,6 +42,12 @@ export const metadata: Metadata = {
       "application/rss+xml": [{ url: "/feed.xml", title: site.title }],
     },
   },
+  // TEMP: keep site out of search indexes until we're ready to launch.
+  // Remove this `robots` block (or set both to true) to re-enable indexing.
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
