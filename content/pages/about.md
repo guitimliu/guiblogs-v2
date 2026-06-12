@@ -12,16 +12,15 @@ title: 關於
 ## 關於作者
 
 - 暱稱：Gui
-- 職業：前端工程師（台北）
+- 職業：設計公司軟體工程師
 - 經歷：
-  - 設計公司前端
+  - 台灣設計公司 | 軟體工程師（Vue / Node.js / MongoDB）
+  - 香港 IT 顧問公司 | React 前端工程師
   - WordPress 接案
-  - 新創公司資訊助理
-  - 私立科大資管系
-  - 國立商科高職資處科
+  - 新創公司 PHP 資訊助理
+  - 大學資管系、高職資處科畢業
 
 ## 我的連結
 
 - GitHub: [guitimliu](https://github.com/guitimliu)
-- 舊站典藏: [guiblogs.com](https://guiblogs.com)
 - IT 鐵人賽：[30 天利用 Hexo 打造技術部落格](https://ithelp.ithome.com.tw/users/20139218/ironman/3910)
