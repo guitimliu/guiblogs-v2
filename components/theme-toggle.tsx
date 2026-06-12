@@ -27,7 +27,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={theme === "dark" ? "切換到亮色模式" : "切換到深色模式"}
-      className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface hover:text-accent"
+      className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-muted transition-colors hover:bg-surface hover:text-accent"
     >
       {/* Icons are SSR-stable; pre-mount fallback uses the moon as a neutral
           placeholder. The inline boot script ensures data-theme is correct
