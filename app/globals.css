@@ -53,6 +53,8 @@ body {
 .prose {
   line-height: 2;
   font-size: 1.0625rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .prose > * + * {
