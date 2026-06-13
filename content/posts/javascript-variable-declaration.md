@@ -9,7 +9,7 @@ draft: false
 ---
 
 JavaScript 的宣告方式，早期以 var 方式宣告居多。其後由於作用域的關係，發展了 let 宣告方式。另外還有 const 常數宣告方式，今天就來介紹不同宣告方式差異。
-> ## 為什麼要宣告變數？
+## 為什麼要宣告變數？
 
 JavaScript 預設如果沒有宣告變數，是不會出錯的，如下：
 
@@ -30,7 +30,7 @@ console.log(a); // output: 1
 
 依然是取得到值的，因為無法確定這個變數來自於哪裡（萬一 code 一多就會很複雜），因此就需要宣告變數會比較合適。
 
-> ## 早期宣告變數方式：var
+## 早期宣告變數方式：var
 
 如果使用 var 來宣告變數，用同樣上述範例，就會有不同差異：
 
@@ -69,7 +69,7 @@ for (var i = 0; i < 10; i++) {
 console.log(i); // output: 10
 ```
 
-> ## 現在主流做法：let
+## 現在主流做法：let
 
 let 改善了前面 var 問題，如下：
 
@@ -93,7 +93,7 @@ for (var i = 0; i < 10; i++) {
 console.log(i); // output: Uncaught ReferenceError: i is not defined
 ```
 
-> ## 常數宣告方式：const
+## 常數宣告方式：const
 
 以 let 來說，宣告後還是能夠重新賦予值：
 
@@ -133,7 +133,7 @@ const a = {
 a = {}; // output: Uncaught TypeError: Assignment to constant variable.
 ```
 
-> ## 參考資料
+## 參考資料
 
 * [JavaScript 那個 let, const, var 到底差在哪？](https://www.youtube.com/watch?v=FGdKdn_CnWo)
 * 六角 JavaScript 直播班課程內容

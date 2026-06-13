@@ -9,7 +9,7 @@ draft: false
 ---
 
 JavaScript 除了有 Number、String  與 Boolean 等型別外，常見的還有 undefined 與 null 這兩種型別。今天就來介紹這兩者是什麼及其差異。
-> ## undefined 與 null 值如其型別
+## undefined 與 null 值如其型別
 
 兩者值如其型別。如下：
 
@@ -19,7 +19,7 @@ let b = null;
 console.log(a, b); // output: undefined null
 ```
 
-> ## 何時出現 undefined？
+## 何時出現 undefined？
 
 * 變數已被宣告，但沒有給予值（未被定義）
 * 使用 var 宣告時出現的 hoisting 狀況
@@ -45,7 +45,7 @@ console.log(a); // output: 1
 
 但如果利用 let 宣告變數，錯誤訊息會換成 `Uncaught ReferenceError: Cannot access 'a' before initialization`。
 
-> ## 何時出現 null？
+## 何時出現 null？
 
 * 宣告變數時，賦予值為空值。
 * 原本變數有值想清空，賦予值為空值。
@@ -56,7 +56,7 @@ let b = 1;
 b = null; // 將原本變數值清空
 ```
 
-> ## 參考資料
+## 參考資料
 
 * 六角學院 JS 直播班錄影
 * [JavaScript 那個 let, const, var 到底差在哪？](https://www.youtube.com/watch?v=FGdKdn_CnWo)

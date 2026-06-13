@@ -11,7 +11,7 @@ categories:
 draft: false
 ---
 
-> ## 題目資訊
+## 題目資訊
 > 題目網址：[1431. Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
 > 難易度：Easy 簡單
 > 通過率：88.1%（截至發文時間）
@@ -21,7 +21,7 @@ draft: false
 
 以下解法一是我第一次提交時的程式碼，但發現整體成績並不理想，於是開始以解法一為基底進行優化，後來就寫出了解法二。
 
-> ## 解法一：使用 if
+## 解法一：使用 if
 
 ### 解法
 
@@ -70,7 +70,7 @@ class Solution {
 * 我知道還有一個 max 函數可以比較指定數字中取最大者，或許可使用看看？
 * 想起上週看了工程師 YouTuber Nic 大神的 [提升軟體開發品質! 寫程式的 6 招實用技巧](https://youtu.be/cfeKek8p9us) 這部影片，其中第三項的「簡化條件表達式」，剛好可以現學現賣 XD 就來嘗試看看簡化條件表達式～
 
-> ## 解法二：捨棄 if，並使用 max 函數
+## 解法二：捨棄 if，並使用 max 函數
 
 ### 解法
 

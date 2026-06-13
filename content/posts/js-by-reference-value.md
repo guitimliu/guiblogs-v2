@@ -9,7 +9,7 @@ draft: false
 ---
 
 今天來探討 JavaScript 中，by referenc（傳參考）與 by value（傳值）差異。
-> ## by value（傳值）
+## by value（傳值）
 
 * 宣告 a 變數後，再宣告變數 b 並將 a 值賦予值給變數 b
 * 然而要將 a 值賦予值到變數 b 時，會額外開新的記憶體空間
@@ -23,7 +23,7 @@ b++;
 console.log(a, b); // output: 1 2
 ```
 
-> ## by reference（傳參考、傳址）
+## by reference（傳參考、傳址）
 
 * 宣告 a 變數後，再宣告變數 b 並將 a 值賦予值給變數 b
 * 但因為兩者皆是物件，物件本身有個記憶體空間，因此 a 變數與 b 變數會指向到同一個物件記憶體空間
@@ -41,6 +41,6 @@ b.name="banana";
 console.log(a.name, b.name); // output: banana banana
 ```
 
-> ## 參考資料
+## 參考資料
 
 * [JavaScript 常見考題破解：物件傳值？傳參考？](https://www.youtube.com/watch?v=y1odVMpi6dU&t=2297s)

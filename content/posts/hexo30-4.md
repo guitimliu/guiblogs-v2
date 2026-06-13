@@ -10,7 +10,7 @@ draft: false
 ---
 
 當前置必要安裝工具用好後，就可以在本機搭建 Hexo 部落格啦！安裝過程會使用到指令，所以我們要打開昨天安裝的 Git 。如果你對指令沒有很熟沒關係，我會一步步說明。
-> ## 下載 Hexo 套件包
+## 下載 Hexo 套件包
 
 要執行的指令為：
 
@@ -20,7 +20,7 @@ $npm install -g hexo-cli
 
 npm 是一個內建於 Node.js 的套件管理系統，使用 JavaScript 所撰寫，可以想像成是 play 商店以及 Apple Store 那樣，將我們需要使用的套件（App）下載至本機使用。這個動作就是要下載 Hexo 套件回自己電腦，使電腦能夠搭建 Hexo 部落格。
 
-> ## 安裝 Hexo
+## 安裝 Hexo
 
 ![安裝 Hexo](https://img.guiblogs.com/hexo30-4/hexo-install.jpg)
 
@@ -46,7 +46,7 @@ npm install
 
 如此一來，安裝就告一段落了。
 
-> ## 搭建完成！看看自己的部落格
+## 搭建完成！看看自己的部落格
 
 當你進行到這步時，恭喜你已經成功在自己的電腦上搭建好一個 Hexo 了。接下來有兩個指令，將在你日後發表文章、編輯文章或頁面以及樣式時大量運用。
 
@@ -103,11 +103,11 @@ hexo s -p 6789
 
 ![指定埠號開啟伺服器](https://img.guiblogs.com/hexo30-4/hexo-s-p.jpg)
 
-> ## 後記
+## 後記
 
 當初在架設 Hexo 時有在 Hackmd 上做指令筆記，結果真的要打成文章時，整個失意 QQ 或甚至是當初並沒有搞定其意思，雖然說現在也還沒很懂所有指令的意思就是了 XD 但透過寫文章以及參閱網路上各類資訊，再度讓我重回記憶。所以寫部落格真是一件非常高 CP 的事情啊！以下附上我參考的一些文章內容與資訊～
 
-> ## 參考資料
+## 參考資料
 
 * [使用 GitHub Pages + Hexo 來架設個人部落格](https://ed521.github.io/2019/07/hexo-install/)
 * [Node.js - 維基百科，自由的百科全書](https://zh.wikipedia.org/wiki/Node.js)

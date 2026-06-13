@@ -13,7 +13,7 @@ draft: false
 ---
 
 上一篇 Flex 筆記文章介紹了它的主軸與交錯軸觀念，今天要來介紹的是主軸的對齊，就像文字有所謂的靠左對齊、置中對齊、靠右對齊或是分散對齊，Flex 的排版方式也能夠達成這樣的效果。
-> ## 設定主軸對齊的 CSS 屬性：`justify-content`
+## 設定主軸對齊的 CSS 屬性：`justify-content`
 
 設定 Flex 主軸對齊，就要利用 `justify-content` 這個 CSS 屬性，其共有以下設定值：
 
@@ -115,7 +115,7 @@ draft: false
 
 ![space-evenly](https://img.guiblogs.com/css-flex-2/space-evenly.jpg)
 
-> ## flex-direction 與 justify-content 的關係
+## flex-direction 與 justify-content 的關係
 
 剛剛我們有示範了靠左、右以及置中對齊的效果，但我們就可以稱呼它就是所謂的「XX 對齊」嗎？其實這些設定都是附著在所謂的主軸上面的，所以假設今天透過 flex-direction 改變主軸流向，就會有不同的結果。
 
@@ -150,7 +150,7 @@ draft: false
 
 ![主軸流向從上到下、並設定 center](https://img.guiblogs.com/css-flex-2/column-center.jpg)
 
-> ## 為什麼物件都會擠在同一排？
+## 為什麼物件都會擠在同一排？
 
 知道了 `justify-content` 各對齊方式後，使我們更容易進行排版，但是當物件一多後，就會發現通通都擠在一起了，而且我們可以從下方 CSS 發現，不管 .item 寬度設定成多大，但是所有物件卻都不會跑到外面。
 
@@ -179,6 +179,6 @@ draft: false
 
 ![wrap-reverse](https://img.guiblogs.com/css-flex-2/wrap-reverse.jpg)
 
-> ## 後記
+## 後記
 
 Flex 技術使網頁排版更加方便且簡易，透過主軸的對齊設定與 flex-wrap 的搭配，已經能排出我們經常看到許多網站的版面。但其實 Flex 有更多可以挖掘的部分，像是先前所提及的交錯軸，將會於下一篇進行介紹。再請大家拭目以待！

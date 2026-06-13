@@ -10,7 +10,7 @@ draft: false
 ---
 
 在架設 Hexo 之前，有些前置作業要先進行。其中由於 Hexo 是使用 Node.js 撰寫，並且需要使用指令安裝 Hexo，因此需要安裝 Node.js 跟 Git。另外，如果要更擅於日後部落格的設定以及文章撰寫，今天還會推坑 VScode 以及 Typora 這兩個工具，就請大家繼續看下去囉！
-> ## Node.js
+## Node.js
 >
 > 下載位置：[下載 | Node.js](https://nodejs.org/zh-tw/download/)
 
@@ -20,7 +20,7 @@ draft: false
 
 再來選擇相對應的作業系統下載並安裝，就可以了。
 
-> ## Git
+## Git
 >
 > 下載位置：[Git - Downloads](https://git-scm.com/downloads)
 
@@ -32,7 +32,7 @@ draft: false
 
 ![Git](https://img.guiblogs.com/hexo30-3/git.jpg)
 
-> ## 網頁編輯器 Visual Studio Code
+## 網頁編輯器 Visual Studio Code
 >
 > 下載位置：[Download Visual Studio Code](https://code.visualstudio.com/download)
 
@@ -46,7 +46,7 @@ draft: false
 
 有看到編輯器左側選單嗎？從上到下選第五個，四個方塊右上角那塊分離的那個，可進入延伸模組頁，安裝擴充功能。然後搜尋截圖上的繁體中文語言套件，安裝後重新開啟應該就能夠中文化了。
 
-> ## 文章編輯器 Typora
+## 文章編輯器 Typora
 >
 > 下載位置：[Typora — a markdown editor, markdown reader.](https://typora.io/#download)
 
@@ -62,11 +62,11 @@ Typora 的 Markdown 模式：
 
 ![Typora Markdown 模式](https://img.guiblogs.com/hexo30-3/typora-markdown.jpg)
 
-> ## 後記
+## 後記
 
 一開始看到這麼多工具或多或少會有點複雜 XDD 不過一步一步照著做，就能夠慢慢地將這些環境裝設起來，接下來就能夠開始搭建起你的第一個 Hexo 部落格囉！敬請期待明天的章節～
 
-> ## 參考資料
+## 參考資料
 
 * [[教學] 使用 GitHub Pages + Hexo 來架設個人部落格](https://ed521.github.io/2019/07/hexo-install/)
   * 當初是看這篇文章知道需要 Node.js 與 Git，裡面雖然也有 Hexo 架設教學，但還是希望大家等我明天文章 XD
