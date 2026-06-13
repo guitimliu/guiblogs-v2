@@ -111,7 +111,12 @@ body {
 }
 
 .prose ol {
-  list-style: cjk-ideographic;
+  list-style: decimal;
+}
+
+.prose del {
+  color: var(--ink-muted);
+  text-decoration-thickness: 1.5px;
 }
 
 .prose li::marker {
@@ -139,9 +144,14 @@ body {
   color: var(--ink-muted);
 }
 
+/* Force images onto their own line so vertical margin actually opens space
+   between the image and surrounding text. Inline-replaced <img> can't take
+   block-level vertical margin without display:block. */
 .prose img {
-  border-radius: 6px;
+  display: block;
+  margin-block: 1.6em;
   margin-inline: auto;
+  border-radius: 6px;
 }
 
 .prose code {

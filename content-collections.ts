@@ -4,6 +4,7 @@ import rehypeShiki from "@shikijs/rehype";
 import GithubSlugger from "github-slugger";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import { z } from "zod";
 
 export type TocEntry = {
@@ -45,6 +46,7 @@ function readingTimeMinutes(markdown: string): number {
 }
 
 const markdownOptions = {
+  remarkPlugins: [remarkGfm],
   rehypePlugins: [
     rehypeSlug,
     [rehypeAutolinkHeadings, { behavior: "wrap" }],
