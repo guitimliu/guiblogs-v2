@@ -3,10 +3,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { site } from "@/lib/site";
 
 const navItems = [
-  { href: "/", label: "首頁" },
   { href: "/blog/", label: "文章" },
-  { href: "/archives/", label: "歸檔" },
-  { href: "/tags/", label: "標籤" },
   { href: "/categories/", label: "分類" },
   { href: "/about/", label: "關於" },
 ];
