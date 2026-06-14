@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { PostCard } from "@/components/post-card";
 import { Pagination } from "@/components/pagination";
 import { getPostsPage, getTotalPages } from "@/lib/posts";
+import { site } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -10,7 +12,16 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function PostListPage({
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string }>;
+}): Promise<Metadata> {
+  const { page } = await params;
+  return { title: `Blog — 第 ${page} 頁` };
+}
+
+export default async function BlogPagePage({
   params,
 }: {
   params: Promise<{ page: string }>;
@@ -24,7 +35,7 @@ export default async function PostListPage({
           <PostCard key={post.slug} post={post} />
         ))}
       </div>
-      <Pagination current={current} total={getTotalPages()} />
+      <Pagination current={current} total={getTotalPages()} basePath={site.blogBasePath} />
     </>
   );
 }

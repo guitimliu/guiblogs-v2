@@ -6,4 +6,5 @@ export const site = {
   author: "Gui",
   locale: "zh-TW",
   postsPerPage: 10,
+  blogBasePath: "/blog",
 } as const;

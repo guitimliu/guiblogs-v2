@@ -1,0 +1,15 @@
+{
+  "name": "Gui 桂",
+  "location": "Taipei, Taiwan",
+  "avatar": "/gui_avatar.jpg",
+  "bio": [
+    "大家好！我是桂，一名網站開發者。",
+    "從高職就讀資處科開始到後來進入職場，深知這個領域需要不斷追求卓越、終身成長，持續往技能更加全面的開發者邁進。",
+    "同時也不斷參與社群，參與研討會志工與讀書會，也即將擔任網頁課程老師，希望能將過去所學透過社群分享給更多人，讓善的社群愈來愈大！"
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/guitimliu" },
+    { "label": "Behance", "url": "https://www.behance.net/1a4b8b89" },
+    { "label": "Linktree", "url": "https://linktr.ee/guitimliu" }
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "title": "JOLIN 蔡依林 ─ 官方網站",
+    "image": "/works/jolincai.jpg",
+    "role": "後端開發",
+    "url": "https://blockstudio.tw/project/jolin-officialweb",
+    "featured": true
+  },
+  {
+    "title": "臺史博海外史料看臺灣 ─ 官方網站暨資料庫",
+    "image": "/works/nmth.jpg",
+    "role": "資料庫系統前端開發",
+    "url": "https://blockstudio.tw/project/nmth",
+    "featured": true
+  },
+  {
+    "title": "藝術銀行 ─ 官方網站暨會員系統",
+    "image": "/works/artbank.jpg",
+    "role": "前端 + 後端開發",
+    "url": "https://blockstudio.tw/project/artbank",
+    "featured": true
+  },
+  {
+    "title": "台東藝文平台",
+    "image": "/works/cultureTaitung.jpg",
+    "role": "後端開發",
+    "url": "https://www.behance.net/gallery/163459081/_",
+    "featured": true
+  },
+  {
+    "title": "慢食臺東",
+    "image": "/works/slowfoodtaitung.jpg",
+    "role": "後端開發",
+    "url": "https://www.behance.net/gallery/174945453/_",
+    "featured": true
+  },
+  {
+    "title": "安妮新聞",
+    "image": "/works/annetimes.jpg",
+    "role": "後端開發",
+    "url": "https://www.behance.net/gallery/168023189/_",
+    "featured": true
+  },
+  {
+    "title": "新埔市場高冷蔬菜",
+    "image": "/works/vegetableSite.png",
+    "role": "WordPress 開發",
+    "url": "https://vegetable.tw/",
+    "featured": true
+  },
+  {
+    "title": "Gui Site（個人作品集 v1）",
+    "image": "/works/guiSite.png",
+    "role": "SCSS + Nuxt 3",
+    "url": "https://guiliu.site/",
+    "featured": false
+  },
+  {
+    "title": "訂單查詢系統(A)",
+    "image": "/works/nicestoreOrderList.jpeg",
+    "role": "Bootstrap 5 + PHP",
+    "url": "",
+    "featured": false
+  },
+  {
+    "title": "訂單查詢系統(B)",
+    "image": "/works/housefoodPayment.png",
+    "role": "CSS + PHP",
+    "url": "",
+    "featured": false
+  }
+]

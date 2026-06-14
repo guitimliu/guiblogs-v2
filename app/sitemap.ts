@@ -14,12 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: `${site.url}/`, lastModified: new Date(posts[0]?.date ?? Date.now()) },
+    { url: `${site.url}${site.blogBasePath}/`, lastModified: new Date(posts[0]?.date ?? Date.now()) },
     ...posts.map((post) => ({
       url: `${site.url}/${encodeURIComponent(post.slug)}/`,
       lastModified: new Date(post.updated ?? post.date),
     })),
     ...Array.from({ length: getTotalPages() - 1 }, (_, i) => ({
-      url: `${site.url}/page/${i + 2}/`,
+      url: `${site.url}${site.blogBasePath}/page/${i + 2}/`,
     })),
     { url: `${site.url}/archives/` },
     { url: `${site.url}/tags/` },

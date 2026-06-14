@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-function pageHref(page: number): string {
-  return page === 1 ? "/" : `/page/${page}/`;
+function pageHref(page: number, basePath: string): string {
+  return page === 1 ? `${basePath}/` : `${basePath}/page/${page}/`;
 }
 
 // Build a windowed list of page numbers around `current`, always including
@@ -37,9 +37,11 @@ const cellBase =
 export function Pagination({
   current,
   total,
+  basePath,
 }: {
   current: number;
   total: number;
+  basePath: string;
 }) {
   if (total <= 1) return null;
 
@@ -54,7 +56,7 @@ export function Pagination({
     >
       {prev !== null && (
         <Link
-          href={pageHref(prev)}
+          href={pageHref(prev, basePath)}
           aria-label="上一頁"
           className={`${cellBase} text-muted hover:bg-surface hover:text-accent`}
         >
@@ -82,7 +84,7 @@ export function Pagination({
         ) : (
           <Link
             key={item}
-            href={pageHref(item)}
+            href={pageHref(item, basePath)}
             className={`${cellBase} text-muted hover:bg-surface hover:text-accent`}
           >
             {item}
@@ -92,7 +94,7 @@ export function Pagination({
 
       {next !== null && (
         <Link
-          href={pageHref(next)}
+          href={pageHref(next, basePath)}
           aria-label="下一頁"
           className={`${cellBase} text-muted hover:bg-surface hover:text-accent`}
         >
