@@ -6,39 +6,49 @@ export function Hero() {
 
   return (
     <section className="py-12 sm:py-16">
-      <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:gap-10">
-        <div className="shrink-0">
+      <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-12">
+        <div className="shrink-0 sm:mt-6">
           <Image
             src={profile.avatar}
             alt={profile.name}
-            width={140}
-            height={140}
+            width={160}
+            height={160}
             priority
             className="rounded-full border border-line bg-surface"
           />
         </div>
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-          <p className="font-mono text-xs tracking-wide text-muted">
+          <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-muted">
+            <span aria-hidden className="h-px w-6 bg-line" />
             {profile.location}
           </p>
-          <h1 className="mt-2 font-display text-4xl tracking-tight sm:text-5xl">
+          <h1 className="mt-3 font-display text-5xl leading-none tracking-tight sm:text-6xl">
             {profile.name}
+            <span className="text-accent">。</span>
           </h1>
-          <div className="mt-5 max-w-prose space-y-4 leading-loose text-soft">
+          <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-soft">
+            {profile.tagline}
+          </p>
+          <div className="mt-7 max-w-prose space-y-4 leading-loose text-soft">
             {profile.bio.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
-          <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm sm:justify-start">
+          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wide sm:justify-start">
             {profile.links.map((link) => (
               <li key={link.url}>
                 <a
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                  className="group inline-flex items-baseline gap-1.5 text-muted transition-colors hover:text-accent"
                 >
-                  {link.label}
+                  <span className="underline decoration-line underline-offset-4 transition-colors group-hover:decoration-accent">
+                    {link.label}
+                  </span>
+                  <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                    ↗
+                  </span>
                 </a>
               </li>
             ))}

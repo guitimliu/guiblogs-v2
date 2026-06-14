@@ -9,6 +9,7 @@ export type ProfileLink = {
 
 export type Profile = {
   name: string;
+  tagline: string;
   bio: string[];
   location: string;
   avatar: string;
