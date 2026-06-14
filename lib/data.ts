@@ -19,6 +19,7 @@ export type Profile = {
 export type Work = {
   title: string;
   image: string;
+  video?: string;
   role: string;
   url: string;
   featured: boolean;

@@ -6,13 +6,27 @@ export function WorkCard({ work }: { work: Work }) {
   const content = (
     <>
       <div className="aspect-[16/10] overflow-hidden rounded-lg border border-line bg-surface">
-        <Image
-          src={work.image}
-          alt={work.title}
-          width={640}
-          height={400}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {work.video ? (
+          <video
+            src={work.video}
+            poster={work.image}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={work.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <Image
+            src={work.image}
+            alt={work.title}
+            width={640}
+            height={400}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
       </div>
       <div className="mt-3 flex items-baseline justify-between gap-3">
         <h3 className="font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
