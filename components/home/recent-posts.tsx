@@ -25,14 +25,14 @@ export function RecentPosts() {
           <li key={post.slug}>
             <Link
               href={`/${post.slug}/`}
-              className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+              className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-6"
             >
-              <span className="font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
+              <span className="min-w-0 flex-1 truncate font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
                 {post.title}
               </span>
               <time
                 dateTime={post.date}
-                className="font-mono text-xs tracking-wide text-muted"
+                className="shrink-0 whitespace-nowrap font-mono text-xs tracking-wide text-muted"
               >
                 {formatDate(post.date)}
               </time>
