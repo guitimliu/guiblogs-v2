@@ -5,7 +5,7 @@ export function WorkCard({ work }: { work: Work }) {
   const hasUrl = work.url.length > 0;
   const content = (
     <>
-      <div className="aspect-[16/10] overflow-hidden rounded-lg border border-line bg-surface">
+      <div className="aspect-[16/9] overflow-hidden rounded-lg border border-line bg-surface">
         {work.video ? (
           <video
             src={work.video}
@@ -23,7 +23,7 @@ export function WorkCard({ work }: { work: Work }) {
             src={work.image}
             alt={work.title}
             width={640}
-            height={400}
+            height={360}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         )}
