@@ -1,6 +1,6 @@
 [
   {
-    "title": "JOLIN 蔡依林 ─ 官方網站",
+    "title": "Jolin 蔡依林 ─ 官方網站",
     "image": "/works/jolincai.jpg",
     "role": "後端開發",
     "url": "https://blockstudio.tw/project/jolin-officialweb",
@@ -21,24 +21,24 @@
     "featured": true
   },
   {
-    "title": "台東藝文平台",
+    "title": "台東藝文平台 ─ 視覺識別&官方網站",
     "image": "/works/cultureTaitung.jpg",
     "role": "後端開發",
-    "url": "https://www.behance.net/gallery/163459081/_",
+    "url": "https://blockstudio.tw/project/culture-taitung",
     "featured": true
   },
   {
-    "title": "慢食臺東",
+    "title": "慢食臺東 ─ 官方網站",
     "image": "/works/slowfoodtaitung.jpg",
     "role": "後端開發",
-    "url": "https://www.behance.net/gallery/174945453/_",
+    "url": "https://blockstudio.tw/project/slowfoodtaitung",
     "featured": true
   },
   {
-    "title": "安妮新聞",
+    "title": "安妮新聞 ─ 官方網站",
     "image": "/works/annetimes.jpg",
     "role": "後端開發",
-    "url": "https://www.behance.net/gallery/168023189/_",
+    "url": "https://blockstudio.tw/project/theannetimes",
     "featured": true
   },
   {
@@ -46,7 +46,7 @@
     "image": "/works/vegetableSite.png",
     "role": "WordPress 開發",
     "url": "https://vegetable.tw/",
-    "featured": true
+    "featured": false
   },
   {
     "title": "Gui Site（個人作品集 v1）",
