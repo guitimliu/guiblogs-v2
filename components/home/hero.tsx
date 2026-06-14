@@ -18,16 +18,19 @@ export function Hero() {
           />
         </div>
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-          <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-muted">
+          <p className="hidden items-center gap-2 font-mono text-xs uppercase tracking-wide text-muted sm:flex">
             <span aria-hidden className="h-px w-6 bg-line" />
             {profile.location}
           </p>
-          <h1 className="mt-3 font-display text-5xl leading-none tracking-tight sm:text-6xl">
+          <h1 className="font-display text-5xl leading-none tracking-tight sm:mt-3 sm:text-6xl">
             {profile.name}
             <span className="text-accent">。</span>
           </h1>
           <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-soft">
             {profile.tagline}
+          </p>
+          <p className="mt-2 font-mono text-xs uppercase tracking-wide text-muted sm:hidden">
+            {profile.location}
           </p>
           <div className="mt-7 max-w-prose space-y-4 leading-loose text-soft">
             {profile.bio.map((paragraph, i) => (
