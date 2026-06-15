@@ -16,7 +16,7 @@ export function WorkCard({ work, index = 0 }: { work: Work; index?: number }) {
             loop
             playsInline
             preload="metadata"
-            aria-label={work.title}
+            aria-hidden="true"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
