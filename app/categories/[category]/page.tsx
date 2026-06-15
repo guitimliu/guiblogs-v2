@@ -31,10 +31,12 @@ export default async function CategoryPage({
 
   return (
     <div className="py-10">
-      <h1 className="text-2xl font-bold">{name}</h1>
+      <h1 className="text-2xl font-bold" data-aos="fade-up">
+        {name}
+      </h1>
       <div className="mt-4 divide-y divide-line">
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} />
+        {posts.map((post, i) => (
+          <PostCard key={post.slug} post={post} index={i} />
         ))}
       </div>
     </div>

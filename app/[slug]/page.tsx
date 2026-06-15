@@ -40,7 +40,7 @@ export default async function PostPage({
 
   return (
     <article className="py-10">
-      <header className="mb-10">
+      <header className="mb-10" data-aos="fade-up">
         <h1 className="text-[1.75rem] font-bold leading-relaxed tracking-wide">
           {post.title}
         </h1>
@@ -71,6 +71,8 @@ export default async function PostPage({
 
       <div
         className="prose"
+        data-aos="fade-up"
+        data-aos-delay="100"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
 

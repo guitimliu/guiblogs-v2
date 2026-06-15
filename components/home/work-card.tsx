@@ -1,8 +1,9 @@
 import Image from "next/image";
 import type { Work } from "@/lib/data";
 
-export function WorkCard({ work }: { work: Work }) {
+export function WorkCard({ work, index = 0 }: { work: Work; index?: number }) {
   const hasUrl = work.url.length > 0;
+  const aosDelay = Math.min(index * 80, 320);
   const content = (
     <>
       <div className="aspect-[16/9] overflow-hidden rounded-lg border border-line bg-surface">
@@ -54,11 +55,17 @@ export function WorkCard({ work }: { work: Work }) {
         target="_blank"
         rel="noopener noreferrer"
         className="group block"
+        data-aos="fade-up"
+        data-aos-delay={aosDelay}
       >
         {content}
       </a>
     );
   }
 
-  return <div className="group block">{content}</div>;
+  return (
+    <div className="group block" data-aos="fade-up" data-aos-delay={aosDelay}>
+      {content}
+    </div>
+  );
 }

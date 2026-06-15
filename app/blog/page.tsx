@@ -10,8 +10,8 @@ export default function BlogIndexPage() {
   return (
     <>
       <div className="divide-y divide-line">
-        {getPostsPage(1).map((post) => (
-          <PostCard key={post.slug} post={post} />
+        {getPostsPage(1).map((post, i) => (
+          <PostCard key={post.slug} post={post} index={i} />
         ))}
       </div>
       <Pagination current={1} total={getTotalPages()} basePath={site.blogBasePath} />

@@ -29,6 +29,8 @@ export function Toc({ entries }: { entries: TocEntry[] }) {
     <nav
       aria-label="目錄"
       className="mb-10 rounded-md border border-line bg-surface px-5 py-4"
+      data-aos="fade-up"
+      data-aos-delay="50"
     >
       <p className="mb-2 font-mono text-xs tracking-widest text-muted">目錄</p>
       <ul className="space-y-1 text-sm">

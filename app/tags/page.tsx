@@ -7,8 +7,14 @@ export const metadata: Metadata = { title: "標籤" };
 export default function TagsPage() {
   return (
     <div className="py-10">
-      <h1 className="text-2xl font-bold">標籤</h1>
-      <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
+      <h1 className="text-2xl font-bold" data-aos="fade-up">
+        標籤
+      </h1>
+      <ul
+        className="mt-6 flex flex-wrap gap-x-5 gap-y-3"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         {getAllTags().map(({ name, count }) => (
           <li key={name}>
             <Link

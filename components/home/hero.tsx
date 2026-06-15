@@ -5,7 +5,7 @@ export function Hero() {
   const profile = getProfile();
 
   return (
-    <section className="py-12 sm:py-16">
+    <section className="py-12 sm:py-16" data-aos="fade-up">
       <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-12">
         <div className="shrink-0 sm:mt-6">
           <Image

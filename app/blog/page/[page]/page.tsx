@@ -31,8 +31,8 @@ export default async function BlogPagePage({
   return (
     <>
       <div className="divide-y divide-line">
-        {getPostsPage(current).map((post) => (
-          <PostCard key={post.slug} post={post} />
+        {getPostsPage(current).map((post, i) => (
+          <PostCard key={post.slug} post={post} index={i} />
         ))}
       </div>
       <Pagination current={current} total={getTotalPages()} basePath={site.blogBasePath} />

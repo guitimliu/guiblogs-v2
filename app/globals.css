@@ -49,6 +49,14 @@ body {
   background: color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* ---- Prose (rendered markdown) ---- */
 .prose {
   line-height: 2;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Lora, Noto_Serif_TC } from "next/font/google";
 import "./globals.css";
+import { AOSInit } from "@/components/aos-init";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { site } from "@/lib/site";
@@ -70,6 +71,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-full flex-col font-body">
+        <AOSInit />
         <Header />
         <main className="mx-auto w-full max-w-3xl flex-1 px-5">{children}</main>
         <Footer />

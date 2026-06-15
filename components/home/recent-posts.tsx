@@ -8,7 +8,11 @@ export function RecentPosts() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="border-t border-line py-12 sm:py-16">
+    <section
+      className="border-t border-line py-12 sm:py-16"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
       <div className="flex items-baseline justify-between">
         <h2 className="font-display text-2xl italic">
           Recent Posts<span className="not-italic text-accent">。</span>

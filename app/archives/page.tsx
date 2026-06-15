@@ -8,9 +8,16 @@ export const metadata: Metadata = { title: "歸檔" };
 export default function ArchivesPage() {
   return (
     <div className="py-10">
-      <h1 className="text-2xl font-bold">歸檔</h1>
-      {getArchives().map(({ year, posts }) => (
-        <section key={year} className="mt-10">
+      <h1 className="text-2xl font-bold" data-aos="fade-up">
+        歸檔
+      </h1>
+      {getArchives().map(({ year, posts }, i) => (
+        <section
+          key={year}
+          className="mt-10"
+          data-aos="fade-up"
+          data-aos-delay={Math.min(i * 80, 240)}
+        >
           <h2 className="select-none font-display text-5xl font-bold leading-none text-line">
             {year}
           </h2>

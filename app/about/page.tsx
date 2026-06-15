@@ -10,9 +10,13 @@ export default function AboutPage() {
 
   return (
     <article className="py-10">
-      <h1 className="text-2xl font-bold">{page.title}</h1>
+      <h1 className="text-2xl font-bold" data-aos="fade-up">
+        {page.title}
+      </h1>
       <div
         className="prose mt-8"
+        data-aos="fade-up"
+        data-aos-delay="100"
         dangerouslySetInnerHTML={{ __html: page.html }}
       />
     </article>

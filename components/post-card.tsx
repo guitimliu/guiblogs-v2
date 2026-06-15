@@ -2,9 +2,10 @@ import Link from "next/link";
 import type { Post } from "@/lib/posts";
 import { formatDate } from "@/lib/format";
 
-export function PostCard({ post }: { post: Post }) {
+export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
+  const aosDelay = Math.min(index * 60, 300);
   return (
-    <article className="py-8">
+    <article className="py-8" data-aos="fade-up" data-aos-delay={aosDelay}>
       <p className="font-mono text-xs tracking-wide text-muted">
         <time dateTime={post.date}>{formatDate(post.date)}</time>
         <span className="mx-2 text-line">/</span>

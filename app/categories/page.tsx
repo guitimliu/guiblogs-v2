@@ -7,8 +7,14 @@ export const metadata: Metadata = { title: "分類" };
 export default function CategoriesPage() {
   return (
     <div className="py-10">
-      <h1 className="text-2xl font-bold">分類</h1>
-      <ul className="mt-6 space-y-3">
+      <h1 className="text-2xl font-bold" data-aos="fade-up">
+        分類
+      </h1>
+      <ul
+        className="mt-6 space-y-3"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         {getAllCategories().map(({ name, count }) => (
           <li key={name}>
             <Link
