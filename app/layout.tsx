@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Lora, Noto_Serif_TC } from "next/font/google";
+import "aos/dist/aos.css";
 import "./globals.css";
 import { AOSInit } from "@/components/aos-init";
 import { Footer } from "@/components/footer";
@@ -14,21 +15,23 @@ const themeBootScript = `
 
 const notoSerif = Noto_Serif_TC({
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
-  preload: false,
+  display: "swap",
 });
 
 const lora = Lora({
   variable: "--font-display",
   subsets: ["latin"],
   style: ["normal", "italic"],
+  display: "swap",
 });
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-mono",
   weight: ["400", "500"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

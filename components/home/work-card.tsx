@@ -25,6 +25,8 @@ export function WorkCard({ work, index = 0 }: { work: Work; index?: number }) {
             alt={work.title}
             width={640}
             height={360}
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, 360px"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         )}

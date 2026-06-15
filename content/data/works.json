@@ -44,14 +44,14 @@
   },
   {
     "title": "新埔市場高冷蔬菜",
-    "image": "/works/vegetableSite.png",
+    "image": "/works/vegetableSite.jpg",
     "role": "WordPress 開發",
     "url": "https://vegetable.tw/",
     "featured": false
   },
   {
     "title": "Gui Site（個人作品集 v1）",
-    "image": "/works/guiSite.png",
+    "image": "/works/guiSite.jpg",
     "role": "SCSS + Nuxt 3",
     "url": "https://guiliu.site/",
     "featured": false
