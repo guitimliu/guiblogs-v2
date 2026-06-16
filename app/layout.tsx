@@ -4,8 +4,11 @@ import "aos/dist/aos.css";
 import "./globals.css";
 import { AOSInit } from "@/components/aos-init";
 import { Footer } from "@/components/footer";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { Header } from "@/components/header";
 import { site } from "@/lib/site";
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 // Runs before paint to set data-theme from localStorage or system preference,
 // avoiding a flash of wrong theme on first load.
@@ -72,6 +75,7 @@ export default function RootLayout({
         <Header />
         <main className="mx-auto w-full max-w-3xl flex-1 px-5">{children}</main>
         <Footer />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

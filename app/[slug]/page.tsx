@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Comments } from "@/components/comments";
 import { Toc } from "@/components/toc";
 import { formatDate } from "@/lib/format";
 import { getAdjacentPosts, getPostBySlug, getPublishedPosts } from "@/lib/posts";
+import { site } from "@/lib/site";
 import { decodeParam } from "@/lib/slug";
 
 export const dynamicParams = false;
@@ -109,6 +111,12 @@ export default async function PostPage({
           <span />
         )}
       </nav>
+
+      <Comments
+        identifier={`/${slug}/`}
+        url={`${site.url}/${slug}/`}
+        title={post.title}
+      />
     </article>
   );
 }

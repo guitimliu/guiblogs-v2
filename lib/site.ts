@@ -7,4 +7,5 @@ export const site = {
   locale: "zh-TW",
   postsPerPage: 10,
   blogBasePath: "/blog",
+  disqusShortname: "guiblogs",
 } as const;
