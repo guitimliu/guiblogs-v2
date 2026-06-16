@@ -15,7 +15,7 @@ const themeBootScript = `
 
 const notoSerif = Noto_Serif_TC({
   variable: "--font-body",
-  weight: ["400", "600", "700"],
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 });

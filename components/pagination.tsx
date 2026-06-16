@@ -77,7 +77,7 @@ export function Pagination({
           <span
             key={item}
             aria-current="page"
-            className={`${cellBase} bg-surface font-semibold text-ink`}
+            className={`${cellBase} bg-surface font-bold text-ink`}
           >
             {item}
           </span>

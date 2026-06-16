@@ -31,7 +31,7 @@ export function RecentPosts() {
               href={`/${post.slug}/`}
               className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-6"
             >
-              <span className="min-w-0 flex-1 truncate font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
+              <span className="min-w-0 flex-1 truncate font-bold leading-snug text-ink transition-colors group-hover:text-accent">
                 {post.title}
               </span>
               <time

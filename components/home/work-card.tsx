@@ -32,7 +32,7 @@ export function WorkCard({ work, index = 0 }: { work: Work; index?: number }) {
         )}
       </div>
       <div className="mt-3 flex items-baseline justify-between gap-3">
-        <h3 className="font-semibold leading-snug text-ink transition-colors group-hover:text-accent">
+        <h3 className="font-bold leading-snug text-ink transition-colors group-hover:text-accent">
           {work.title}
         </h3>
         {hasUrl && (

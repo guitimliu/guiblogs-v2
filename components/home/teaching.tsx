@@ -38,7 +38,7 @@ export function Teaching() {
                   <span className="font-mono text-xs uppercase tracking-wide text-muted">
                     擔任
                   </span>
-                  <span className="font-semibold text-accent">{item.role}</span>
+                  <span className="font-bold text-accent">{item.role}</span>
                 </p>
               </div>
               <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 font-mono text-xs tracking-wide text-muted">

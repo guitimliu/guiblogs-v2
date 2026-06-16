@@ -11,7 +11,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
         <span className="mx-2 text-line">/</span>
         {post.readingTimeMinutes} min
       </p>
-      <h2 className="mt-2 text-xl font-semibold leading-relaxed">
+      <h2 className="mt-2 text-xl font-bold leading-relaxed">
         <Link
           href={`/${post.slug}/`}
           className="transition-colors hover:text-accent"
