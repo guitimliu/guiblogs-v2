@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Lora, Noto_Serif_TC } from "next/font/google";
-import "aos/dist/aos.css";
 import "./globals.css";
 import { AOSInit } from "@/components/aos-init";
 import { Footer } from "@/components/footer";
@@ -35,6 +34,7 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
