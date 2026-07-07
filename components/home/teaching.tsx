@@ -41,7 +41,7 @@ export function Teaching() {
                   <span className="font-bold text-accent">{item.role}</span>
                 </p>
               </div>
-              <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 font-mono text-xs tracking-wide text-muted">
+              <div className="flex flex-wrap items-end gap-x-6 gap-y-2 font-mono text-xs tracking-wide text-muted">
                 <dl className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
                   <div className="flex items-baseline gap-2">
                     <dt className="text-[0.65rem] uppercase">Format</dt>
@@ -52,9 +52,16 @@ export function Teaching() {
                     <dd className="text-soft">{item.period}</dd>
                   </div>
                 </dl>
-                <div className="ml-auto flex items-baseline gap-2 text-accent transition-colors group-hover:underline">
-                  <span>{item.status}</span>
-                  <span aria-hidden>↗</span>
+                <div className="ml-auto flex flex-col items-end gap-1 text-right">
+                  {item.note && (
+                    <span className="text-[0.65rem] normal-case text-soft">
+                      {item.note}
+                    </span>
+                  )}
+                  <div className="flex items-baseline gap-2 text-accent transition-colors group-hover:underline">
+                    <span>{item.status}</span>
+                    <span aria-hidden>↗</span>
+                  </div>
                 </div>
               </div>
             </a>

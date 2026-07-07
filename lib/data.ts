@@ -44,6 +44,7 @@ export type TeachingItem = {
   format: string;
   period: string;
   status: string;
+  note?: string;
   url: string;
 };
 
