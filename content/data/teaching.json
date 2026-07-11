@@ -1,5 +1,15 @@
 [
   {
+    "type": "講座",
+    "title": "同個 Email、兩種登入方式 — Node.js + Google 登入整合的四個帳號接管路徑 | COSCUP 2026 · JSDC X DevFrontier 議程軌",
+    "role": "講者",
+    "format": "台灣科技大學 研揚大樓 TR311 教室",
+    "period": "2026.08.08 14:45 – 15:15",
+    "status": "議程公告",
+    "note": "自由參與 · 免費入場",
+    "url": "https://coscup.org/2026/session/MQX3V9/"
+  },
+  {
     "type": "課程",
     "title": "前端工程師培訓班＆專題班 | 六角學院",
     "role": "JavaScript 直播班 · 講師",
