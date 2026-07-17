@@ -37,6 +37,35 @@ function extractToc(markdown: string): TocEntry[] {
   return toc;
 }
 
+function excerptFromMarkdown(markdown: string, maxLength = 110): string {
+  const text = markdown
+    .replace(/```[\s\S]*?```/g, " ") // fenced code
+    .replace(/~~~[\s\S]*?~~~/g, " ")
+    .replace(/`([^`]*)`/g, "$1") // inline code -> keep its text
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ") // images
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // links -> text
+    .replace(/^\s{0,3}#{1,6}\s+/gm, "") // headings
+    .replace(/^\s{0,3}>\s?/gm, "") // blockquote
+    .replace(/^\s*[-*+]\s+/gm, "") // unordered list
+    .replace(/^\s*\d+\.\s+/gm, "") // ordered list
+    .replace(/[*_~]/g, "") // emphasis marks
+    .replace(/<[^>]+>/g, " ") // html tags
+    .replace(/\s+/g, " ") // collapse whitespace
+    .trim();
+
+  if (text.length <= maxLength) return text;
+
+  const slice = text.slice(0, maxLength);
+  // Prefer to end on a full stop in the back half; otherwise hard-cut + ellipsis.
+  const sentenceEnd = Math.max(
+    slice.lastIndexOf("。"),
+    slice.lastIndexOf("！"),
+    slice.lastIndexOf("？"),
+  );
+  if (sentenceEnd >= maxLength * 0.5) return slice.slice(0, sentenceEnd + 1);
+  return `${slice.replace(/[，、,.\s]+$/, "")}…`;
+}
+
 function readingTimeMinutes(markdown: string): number {
   const cjkChars = (markdown.match(/[一-鿿぀-ヿ]/g) ?? []).length;
   const latinWords = (
@@ -86,6 +115,7 @@ const posts = defineCollection({
       updated: document.updated?.toISOString(),
       slug: document._meta.path,
       html,
+      excerpt: excerptFromMarkdown(content),
       toc: extractToc(content),
       readingTimeMinutes: readingTimeMinutes(content),
     };

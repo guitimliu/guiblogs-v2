@@ -1,5 +1,6 @@
 import { Feed } from "feed";
 import { getPublishedPosts } from "@/lib/posts";
+import { postDescription } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -22,7 +23,7 @@ export async function GET() {
       title: post.title,
       id: url,
       link: url,
-      description: post.description,
+      description: postDescription(post),
       content: post.html,
       date: new Date(post.date),
       category: post.categories.map((name) => ({ name })),

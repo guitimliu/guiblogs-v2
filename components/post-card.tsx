@@ -1,9 +1,11 @@
 import Link from "next/link";
-import type { Post } from "@/lib/posts";
 import { formatDate } from "@/lib/format";
+import type { Post } from "@/lib/posts";
+import { postDescription } from "@/lib/seo";
 
 export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   const aosDelay = Math.min(index * 60, 300);
+  const description = postDescription(post);
   return (
     <article className="py-8" data-aos="fade-up" data-aos-delay={aosDelay}>
       <p className="font-mono text-xs tracking-wide text-muted">
@@ -19,8 +21,8 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
           {post.title}
         </Link>
       </h2>
-      {post.description && (
-        <p className="mt-2 leading-loose text-soft">{post.description}</p>
+      {description && (
+        <p className="mt-2 leading-loose text-soft">{description}</p>
       )}
       {post.tags.length > 0 && (
         <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">

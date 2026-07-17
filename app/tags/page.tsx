@@ -1,12 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { JsonLd } from "@/components/json-ld";
 import { getAllTags } from "@/lib/posts";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  type Crumb,
+  jsonLdGraph,
+} from "@/lib/schema";
+import { site } from "@/lib/site";
 
-export const metadata: Metadata = { title: "標籤" };
+export const metadata: Metadata = {
+  title: "標籤",
+  alternates: { canonical: "/tags/" },
+};
+
+const parentCrumbs: Crumb[] = [{ name: "首頁", url: `${site.url}/` }];
+const schemaCrumbs: Crumb[] = [
+  ...parentCrumbs,
+  { name: "標籤", url: `${site.url}/tags/` },
+];
 
 export default function TagsPage() {
   return (
     <div className="py-10">
+      <JsonLd
+        data={jsonLdGraph(
+          collectionPageSchema({ name: "標籤", url: `${site.url}/tags/` }),
+          breadcrumbSchema(schemaCrumbs),
+        )}
+      />
+      <Breadcrumbs items={parentCrumbs} />
       <h1 className="text-2xl font-bold" data-aos="fade-up">
         標籤
       </h1>

@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { JsonLd } from "@/components/json-ld";
 import { PostCard } from "@/components/post-card";
 import { getAllTags, getPostsByTag } from "@/lib/posts";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  type Crumb,
+  jsonLdGraph,
+} from "@/lib/schema";
+import { site } from "@/lib/site";
 import { decodeParam } from "@/lib/slug";
 
 export const dynamicParams = false;
@@ -16,7 +25,11 @@ export async function generateMetadata({
   params: Promise<{ tag: string }>;
 }): Promise<Metadata> {
   const { tag } = await params;
-  return { title: `標籤：${decodeParam(tag)}` };
+  const name = decodeParam(tag);
+  return {
+    title: `標籤：${name}`,
+    alternates: { canonical: `/tags/${encodeURIComponent(name)}/` },
+  };
 }
 
 export default async function TagPage({
@@ -29,8 +42,22 @@ export default async function TagPage({
   const posts = getPostsByTag(name);
   if (posts.length === 0) notFound();
 
+  const url = `${site.url}/tags/${encodeURIComponent(name)}/`;
+  const parentCrumbs: Crumb[] = [
+    { name: "首頁", url: `${site.url}/` },
+    { name: "標籤", url: `${site.url}/tags/` },
+  ];
+  const schemaCrumbs: Crumb[] = [...parentCrumbs, { name: `#${name}`, url }];
+
   return (
     <div className="py-10">
+      <JsonLd
+        data={jsonLdGraph(
+          collectionPageSchema({ name: `標籤：${name}`, url }),
+          breadcrumbSchema(schemaCrumbs),
+        )}
+      />
+      <Breadcrumbs items={parentCrumbs} />
       <h1 className="text-2xl font-bold" data-aos="fade-up">
         #{name}
       </h1>

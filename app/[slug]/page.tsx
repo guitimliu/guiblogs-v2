@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Comments } from "@/components/comments";
+import { JsonLd } from "@/components/json-ld";
 import { Toc } from "@/components/toc";
+import { getProfile } from "@/lib/data";
 import { formatDate } from "@/lib/format";
 import { getAdjacentPosts, getPostBySlug, getPublishedPosts } from "@/lib/posts";
+import {
+  blogPostingSchema,
+  breadcrumbSchema,
+  type Crumb,
+  jsonLdGraph,
+} from "@/lib/schema";
+import {
+  normalizeCover,
+  postDescription,
+  postUrl,
+  toAbsoluteHttps,
+} from "@/lib/seo";
 import { site } from "@/lib/site";
 import { decodeParam } from "@/lib/slug";
 
@@ -22,9 +37,32 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(decodeParam(slug));
   if (!post) return {};
+  const url = postUrl(post);
+  const description = postDescription(post);
+  const ogImage = normalizeCover(post.cover);
   return {
     title: post.title,
-    description: post.description,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description,
+      siteName: site.title,
+      locale: "zh_TW",
+      publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
+      authors: [`${site.url}/about/`],
+      tags: post.tags,
+      images: [{ url: ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -39,14 +77,42 @@ export default async function PostPage({
   if (!post) notFound();
 
   const { prev, next } = getAdjacentPosts(slug);
+  const profile = getProfile();
+  const primaryCategory = post.categories[0];
+  const parentCrumbs: Crumb[] = [
+    { name: "首頁", url: `${site.url}/` },
+    ...(primaryCategory
+      ? [
+          {
+            name: primaryCategory,
+            url: `${site.url}/categories/${encodeURIComponent(primaryCategory)}/`,
+          },
+        ]
+      : []),
+  ];
+  const schemaCrumbs: Crumb[] = [
+    ...parentCrumbs,
+    { name: post.title, url: postUrl(post) },
+  ];
 
   return (
     <article className="py-10">
+      <JsonLd
+        data={jsonLdGraph(
+          blogPostingSchema(post),
+          breadcrumbSchema(schemaCrumbs),
+        )}
+      />
+      <Breadcrumbs items={parentCrumbs} />
       <header className="mb-10" data-aos="fade-up">
         <h1 className="text-[1.75rem] font-bold leading-relaxed tracking-wide">
           {post.title}
         </h1>
         <p className="mt-3 font-mono text-xs tracking-wide text-muted">
+          <Link href="/about/" className="hover:text-accent">
+            {profile.name}
+          </Link>
+          <span className="mx-2 text-line">·</span>
           <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span className="mx-2 text-line">/</span>
           {post.readingTimeMinutes} min
@@ -67,6 +133,15 @@ export default async function PostPage({
             </>
           )}
         </p>
+        {post.cover && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={toAbsoluteHttps(post.cover)}
+            alt=""
+            loading="lazy"
+            className="mt-6 aspect-[2/1] w-full rounded-lg border border-line object-cover"
+          />
+        )}
       </header>
 
       <Toc entries={post.toc} />

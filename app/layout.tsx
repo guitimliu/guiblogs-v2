@@ -5,6 +5,14 @@ import { AOSInit } from "@/components/aos-init";
 import { Footer } from "@/components/footer";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { Header } from "@/components/header";
+import { JsonLd } from "@/components/json-ld";
+import {
+  jsonLdGraph,
+  organizationSchema,
+  personSchema,
+  websiteSchema,
+} from "@/lib/schema";
+import { OG_DEFAULT_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
@@ -45,9 +53,27 @@ export const metadata: Metadata = {
   },
   description: site.description,
   alternates: {
+    // No site-wide canonical here: metadata canonical is inherited by child
+    // routes, so a "/" default would make every un-overridden page canonicalize
+    // to the homepage. Each page sets its own canonical instead.
     types: {
       "application/rss+xml": [{ url: "/feed.xml", title: site.title }],
     },
+  },
+  openGraph: {
+    type: "website",
+    siteName: site.title,
+    locale: "zh_TW",
+    url: site.url,
+    title: `${site.title} - ${site.subtitle}`,
+    description: site.description,
+    images: [{ url: OG_DEFAULT_IMAGE, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.title} - ${site.subtitle}`,
+    description: site.description,
+    images: [OG_DEFAULT_IMAGE],
   },
 };
 
@@ -71,6 +97,13 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-full flex-col font-body">
+        <JsonLd
+          data={jsonLdGraph(
+            websiteSchema(),
+            organizationSchema(),
+            personSchema(),
+          )}
+        />
         <AOSInit />
         <Header />
         <main className="mx-auto w-full max-w-3xl flex-1 px-5">{children}</main>
