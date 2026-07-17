@@ -5,8 +5,8 @@
   "packageManager": "pnpm@11.6.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "generate": "next build",
+    "build": "next build && node scripts/generate-markdown-twins.mjs",
+    "generate": "next build && node scripts/generate-markdown-twins.mjs",
     "new": "node scripts/new-post.mjs",
     "preview": "npx serve out",
     "lint": "eslint"
